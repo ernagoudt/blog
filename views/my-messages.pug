@@ -1,0 +1,18 @@
+html
+  head
+    title My messages
+    style
+      include style.css
+  body
+    include nav.pug
+    br
+    br
+    br
+
+    h1 My messages
+    -for (var i = 0; i < myMessages.length; i++)
+      div
+        ul.messages
+          li.messages
+            h3 #{myMessages[i].title}
+            p #{myMessages[i].body}

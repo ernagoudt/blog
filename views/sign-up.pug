@@ -1,0 +1,23 @@
+html
+  head
+    title Sign Up
+    style
+      include style.css
+  body
+    include nav.pug
+    br
+    br
+    br
+    br
+    br
+    br
+
+    div(class="transbox")
+      h3 Please sign up :)
+      form(method="POST" action="/sign-up")
+        input(type="text" name="username" placeholder="Username")
+        input(type="text" name="email" placeholder="Email")
+        input(type="password" name="password" placeholder="Password")
+        input(type="submit" value="Sign Up")
+
+

@@ -1,0 +1,17 @@
+html
+  head
+    title Homepage
+    style
+      include style.css
+  body
+    include nav.pug
+    br
+    br
+    br
+    if (user)
+      h1 Welcome #{user.username}, to the homepage
+
+    else
+      h1 Welcome!
+
+

@@ -1,0 +1,27 @@
+html
+  head
+    title Login
+    style
+      include style.css
+  body
+    include nav.pug
+    br
+    br
+    br
+    br
+    br
+    br
+
+    div(class="transbox")
+      h3 Login
+      form(method="POST" action="/login")
+        input(type="text" name="username" placeholder="Username")
+        input(type="password" name="password" placeholder="Password")
+        input(type="submit" value="Login")
+
+      p
+      | Not yet registered? Sign up
+      |
+      a(href="/sign-up") here!
+
+
