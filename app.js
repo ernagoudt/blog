@@ -1,4 +1,4 @@
-const express = require('express')
+  const express = require('express')
 const app = express()
 const session = require('express-session');
 const pg = require("pg")
@@ -34,6 +34,6 @@ require("./routes/post-comment.js")(app, client)
 
 client.connect((err) => console.log(err))
 
-app.listen(3010, () => {
-    console.log("listening to port 3010")
+app.listen(process.env.webport, () => {
+    console.log("listening to port", process.env.webport)
 });
