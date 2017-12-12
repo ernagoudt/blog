@@ -25,9 +25,9 @@ html
 
           if (user)
             form(method="POST" action="/post-comment")
-              input(type="text" name="comment" placeholder="Leave your comment")
+              input.comment(type="text" name="comment" placeholder="Leave your comment")
               input(type="hidden" name="messageId" value=allMessages[i].id)
-              input(type="submit" value="Leave comment")
+              input.comment(type="submit" value="Comment")
           else
             p
               a(href="/login") Log in to comment on this message
