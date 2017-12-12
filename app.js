@@ -20,7 +20,7 @@ const client = new Client({
     host: process.env.host,
     database: process.env.database,
     password: process.env.password,
-    port: process.env.webport
+    port: 5432
 })
 
 require("./routes/index.js")(app)
