@@ -19,9 +19,9 @@ html
       div
         ul.messages
           li.messages
-            h3 #{allMessages[i].title}
-            p #{allMessages[i].body}
-            p.username Posted by: #{allMessages[i].username}
+            h3 #{allMessages[i].messagetitle}
+            p #{allMessages[i].messagebody}
+            p.username Posted by: #{allMessages[i].messageusername}
 
           if (user)
             form(method="POST" action="/post-comment")
@@ -32,3 +32,11 @@ html
             p
               a(href="/login") Log in to comment on this message
 
+        if (allMessages[i].comment != null)
+          -var comments = allMessages[i].comment
+          -for (var x = 0; x < comments.length; x++)
+            div
+              ul.comments
+                li.comments
+                  b #{allMessages[i].commentusername[x]} commented on this message:
+                  p #{allMessages[i].comment[x]}
