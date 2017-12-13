@@ -14,7 +14,7 @@ module.exports = (app, client) => {
   client.query(query, (err, result) => {
     if (err) throw err
 
-  res.redirect("all-messages")
+  res.redirect("/all-messages")
 
   })
 })
