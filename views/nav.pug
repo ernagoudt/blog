@@ -2,20 +2,59 @@ nav
   ul
     li
       a(href='/') Home
-    li
-      a(href='/all-messages') All messages
     if (user)
-      li
-        a(href='/post-message') Post message
-      li
-        a(href='/my-messages') My messages
-      li.loggedIn
-        a(href='/logout') Log out, #{user.username}
+      li.dropdown
+        a(href="javascript:void(0)" class="dropbtn") My account
+        div(class="dropdown-content")
+          a(href="/post-message") Create post
+          a(href="/my-messages") My posts
+          a(href="/logout") Logout
     else
-      li.loggedIn
+      li.logIn
         a(href='/login') Log in
 
 style.
+
+  nav ul li.dropdown {
+    float: right;
+  }
+
+  nav ul li.logIn {
+    float: right;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown li {
+    display: inline-block;
+    background-color: #990000;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+  }
+
+  .dropbtn a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 20px 30px;
+    text-decoration: none;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+  }
+
+  .dropdown-content a {
+    width: 100px;
+    margin: 0;
+  }
+
   nav {
     background-color: #990000;
     width: 100%;
@@ -48,20 +87,4 @@ style.
     background-color: #660000;
   }
 
-  nav ul li.loggedIn {
-    float: right;
-  }
-
-  nav ul li.loggedIn a {
-    display: inline-block;
-    padding: 20px 30px;
-    background-color: #990000;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-  }
-
-  nav ul li.loggedIn a:hover {
-    background-color: #660000;
-  }
 

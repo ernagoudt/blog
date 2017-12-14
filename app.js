@@ -5,6 +5,7 @@ const pg = require("pg")
 const Client = pg.Client
 const bodyParser = require("body-parser")
 
+app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.set('view engine', 'pug')
 
@@ -23,12 +24,11 @@ const client = new Client({
     port: 5432
 })
 
-require("./routes/index.js")(app)
+require("./routes/index.js")(app, client)
 require("./routes/sign-up.js")(app, client)
 require("./routes/login.js")(app, client)
 require("./routes/logout.js")(app)
 require("./routes/post-message.js")(app, client)
-require("./routes/all-messages.js")(app, client)
 require("./routes/my-messages.js")(app, client)
 require("./routes/post-comment.js")(app, client)
 
